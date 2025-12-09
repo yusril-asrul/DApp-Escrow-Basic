@@ -9,9 +9,49 @@
     rel="stylesheet"
   />
 
+  <style>
+        .loading {
+            position: fixed;
+            background-color: #ffffffaa;
+            width: 100vw;
+            height: 100dvh;
+            left: 0;
+            top: 0;
+            z-index: 99;
+        }
+        .loader {
+            width: 45px;
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            aspect-ratio: 1;
+            --c: no-repeat linear-gradient(#000 0 0);
+            background: 
+                var(--c) 0%   50%,
+                var(--c) 50%  50%,
+                var(--c) 100% 50%;
+            background-size: 20% 100%;
+            animation: l1 1s infinite linear;
+        }
+        @keyframes l1 {
+            0%  {background-size: 20% 100%,20% 100%,20% 100%}
+            33% {background-size: 20% 10% ,20% 100%,20% 100%}
+            50% {background-size: 20% 100%,20% 10% ,20% 100%}
+            66% {background-size: 20% 100%,20% 100%,20% 10% }
+            100%{background-size: 20% 100%,20% 100%,20% 100%}
+        }
+  </style>
+
 </head>
 
 <body class="bg-light">
+    <div class="loading">
+        <div class="loader"></div>
+    </div>
+
   <section class="container py-5">
     <div class="row justify-content-center">
         <div class="col-md-9">
